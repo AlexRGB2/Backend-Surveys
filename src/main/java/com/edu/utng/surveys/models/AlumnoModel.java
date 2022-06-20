@@ -1,8 +1,17 @@
 package com.edu.utng.surveys.models;
 
+import javax.persistence.Entity;
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Alumno")
 public class AlumnoModel {
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
     private int matricula;
+
     private String nombre;
     private String apellidoPaterno;
     private String apellidoMaterno;
