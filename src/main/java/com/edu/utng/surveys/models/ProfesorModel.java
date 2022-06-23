@@ -11,19 +11,19 @@ public class ProfesorModel {
     @Column(unique = true, nullable = false)
     private int numEmpleado;
     
-    @Column(nullable=true)
+    @Column(nullable=false)
     private String nombre;
 
-    @Column(nullable=true)
+    @Column(nullable=false)
     private String appPaterno;
 
-    @Column(nullable=true)
+    @Column(nullable=false)
     private String appMaterno;
 
-    @Column(nullable=true)
+    @Column(nullable=false)
     private String fechaNac;
 
-    @Column(nullable=true)
+    @Column(nullable=false)
     private char sexo;
 
     @Column(nullable=true)

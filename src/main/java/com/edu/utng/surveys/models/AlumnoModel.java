@@ -16,11 +16,22 @@ public class AlumnoModel {
     @Column(unique = true, nullable = false)
     private int matricula;
 
+    @Column(nullable = false)
     private String nombre;
+
+    @Column(nullable = false)
     private String apellidoPaterno;
+
+    @Column(nullable = false)
     private String apellidoMaterno;
+
+    @Column(nullable = false)
     private String fechaNacimiento;
+
+    @Column(nullable = false)
     private Character sexo;
+
+    @Column(nullable = true)
     private String direccion;
 
     public int getMatricula() {

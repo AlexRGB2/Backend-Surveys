@@ -9,13 +9,13 @@ public class EncuestaModel {
     @Column(unique = true, nullable = false)
     private int numEncuesta;
 
-    @Column(nullable = true)
+    @Column(nullable = false)
     private String nombre;
 
-    @Column(nullable = true)
+    @Column(nullable = false)
     private String numPreguntas;
 
-    @Column(nullable = true)
+    @Column(nullable = false)
     private String cuatrimestre;
 
     public int getNumEncuesta() {
