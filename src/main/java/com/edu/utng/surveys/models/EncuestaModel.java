@@ -53,6 +53,22 @@ public class EncuestaModel {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "alumno")
     private List<AlumnoModel> alumno;
 
+    public List<AlumnoModel> getAlumno() {
+        return alumno;
+    }
+
+    public void setAlumno(List<AlumnoModel> alumno) {
+        this.alumno = alumno;
+    }
+
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "profesor")
     private List<ProfesorModel> reservations;
+
+    public List<ProfesorModel> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<ProfesorModel> reservations) {
+        this.reservations = reservations;
+    }
 }
