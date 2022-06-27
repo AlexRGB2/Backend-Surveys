@@ -4,6 +4,7 @@ import java.util.List;
 import javax.persistence.*;
 
 public class EncuestaModel {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
@@ -17,6 +18,12 @@ public class EncuestaModel {
 
     @Column(nullable = false)
     private String cuatrimestre;
+
+    @Column(nullable = false)
+    private int profesorNumEmpleado;
+
+    @Column(nullable = false)
+    private int alumnoMatricula;
 
     public int getNumEncuesta() {
         return numEncuesta;
@@ -50,7 +57,24 @@ public class EncuestaModel {
         this.cuatrimestre = cuatrimestre;
     }
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "alumno")
+    public int getProfesorNumEmpleado() {
+        return profesorNumEmpleado;
+    }
+
+    public void setProfesorNumEmpleado(int profesorNumEmpleado) {
+        this.profesorNumEmpleado = profesorNumEmpleado;
+    }
+
+    public int getAlumnoMatricula() {
+        return alumnoMatricula;
+    }
+
+    public void setAlumnoMatricula(int alumnoMatricula) {
+        this.alumnoMatricula = alumnoMatricula;
+    }
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name= "alumnoMatricula", referencedColumnName = "matricula")
     private List<AlumnoModel> alumno;
 
     public List<AlumnoModel> getAlumno() {
@@ -61,14 +85,15 @@ public class EncuestaModel {
         this.alumno = alumno;
     }
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "profesor")
-    private List<ProfesorModel> reservations;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="profesorNumEmpleado", referencedColumnName = "numEmpleado")
+    private List<ProfesorModel> profesor;
 
-    public List<ProfesorModel> getReservations() {
-        return reservations;
+    public List<ProfesorModel> getProfesor() {
+        return profesor;
     }
 
-    public void setReservations(List<ProfesorModel> reservations) {
-        this.reservations = reservations;
+    public void setProfesor(List<ProfesorModel> profesor) {
+        this.profesor = profesor;
     }
 }
