@@ -8,7 +8,7 @@ public class EncuestaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
-    private int numEncuesta;
+    private Long numEncuesta;
 
     @Column(nullable = false)
     private String nombre;
@@ -25,11 +25,11 @@ public class EncuestaModel {
     @Column(nullable = false)
     private int alumnoMatricula;
 
-    public int getNumEncuesta() {
+    public Long getNumEncuesta() {
         return numEncuesta;
     }
 
-    public void setNumEncuesta(int numEncuesta) {
+    public void setNumEncuesta(Long numEncuesta) {
         this.numEncuesta = numEncuesta;
     }
 

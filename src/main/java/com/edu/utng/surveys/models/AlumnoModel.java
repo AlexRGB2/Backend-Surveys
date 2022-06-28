@@ -14,7 +14,7 @@ public class AlumnoModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
-    private int matricula;
+    private Long matricula;
 
     @Column(nullable = false)
     private String nombre;
@@ -34,10 +34,10 @@ public class AlumnoModel {
     @Column(nullable = true)
     private String direccion;
 
-    public int getMatricula() {
+    public Long getMatricula() {
         return matricula;
     }
-    public void setMatricula(int matricula) {
+    public void setMatricula(Long matricula) {
         this.matricula = matricula;
     }
     public String getNombre() {

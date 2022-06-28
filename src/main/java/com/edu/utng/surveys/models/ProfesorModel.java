@@ -9,7 +9,7 @@ public class ProfesorModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
-    private int numEmpleado;
+    private Long numEmpleado;
     
     @Column(nullable=false)
     private String nombre;
@@ -29,11 +29,11 @@ public class ProfesorModel {
     @Column(nullable=true)
     private String direccion;
 
-    public int getNumEmpleado() {
+    public Long getNumEmpleado() {
         return numEmpleado;
     }
 
-    public void setNumEmpleado(int numEmpleado) {
+    public void setNumEmpleado(Long numEmpleado) {
         this.numEmpleado = numEmpleado;
     }
 
