@@ -8,11 +8,14 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Alumno")
+@Table(name = "alumno")
 public class AlumnoModel {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
+    private Long id;
+
     @Column(unique = true, nullable = false)
     private Long matricula;
 
@@ -29,10 +32,17 @@ public class AlumnoModel {
     private String fechaNacimiento;
 
     @Column(nullable = false)
-    private Character sexo;
+    private String sexo;
 
     @Column(nullable = true)
     private String direccion;
+    
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Long getMatricula() {
         return matricula;
@@ -64,10 +74,10 @@ public class AlumnoModel {
     public void setFechaNacimiento(String fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
-    public Character getSexo() {
+    public String getSexo() {
         return sexo;
     }
-    public void setSexo(Character sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
     public String getDireccion() {

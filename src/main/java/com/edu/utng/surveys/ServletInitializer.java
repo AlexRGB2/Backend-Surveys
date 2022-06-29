@@ -1,4 +1,4 @@
-package com.edu.utng.surveys.services;
+package com.edu.utng.surveys;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

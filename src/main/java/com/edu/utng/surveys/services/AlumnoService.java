@@ -1,6 +1,7 @@
 package com.edu.utng.surveys.services;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,5 +20,22 @@ public class AlumnoService {
 
     public AlumnoModel guardarAlumno (AlumnoModel alumno){
         return alumnoRepository.save(alumno);
+    }
+
+    public Optional<AlumnoModel> obtenerPorId(Long id){
+        return alumnoRepository.findById(id);
+    }
+
+    public ArrayList<AlumnoModel> obtenerPorMatricula(Long matricula){
+        return alumnoRepository.findByMatricula(matricula);
+    }
+
+    public boolean eliminiarAlumno(Long matricula){
+        try{
+            alumnoRepository.deleteById(matricula);
+            return true;
+        } catch(Exception err){
+            return false;
+        }
     }
 }

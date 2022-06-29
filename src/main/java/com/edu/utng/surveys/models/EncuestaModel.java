@@ -1,8 +1,9 @@
 package com.edu.utng.surveys.models;
 
-import java.util.List;
 import javax.persistence.*;
 
+@Entity
+@Table(name="encuesta")
 public class EncuestaModel {
     
     @Id
@@ -71,29 +72,5 @@ public class EncuestaModel {
 
     public void setAlumnoMatricula(int alumnoMatricula) {
         this.alumnoMatricula = alumnoMatricula;
-    }
-
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name= "alumnoMatricula", referencedColumnName = "matricula")
-    private List<AlumnoModel> alumno;
-
-    public List<AlumnoModel> getAlumno() {
-        return alumno;
-    }
-
-    public void setAlumno(List<AlumnoModel> alumno) {
-        this.alumno = alumno;
-    }
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="profesorNumEmpleado", referencedColumnName = "numEmpleado")
-    private List<ProfesorModel> profesor;
-
-    public List<ProfesorModel> getProfesor() {
-        return profesor;
-    }
-
-    public void setProfesor(List<ProfesorModel> profesor) {
-        this.profesor = profesor;
     }
 }
