@@ -13,6 +13,9 @@ public class ProfesorModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
+    private Long id;
+
+    @Column(unique = true, nullable = false)
     private Long numEmpleado;
     
     @Column(nullable=false)
@@ -32,6 +35,14 @@ public class ProfesorModel {
 
     @Column(nullable=true)
     private String direccion;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Long getNumEmpleado() {
         return numEmpleado;

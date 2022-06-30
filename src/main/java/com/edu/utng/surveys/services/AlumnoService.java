@@ -30,7 +30,7 @@ public class AlumnoService {
         return alumnoRepository.findByMatricula(matricula);
     }
 
-    public boolean eliminiarAlumno(Long matricula){
+    public boolean eliminarAlumno(Long matricula){
         try{
             alumnoRepository.deleteById(matricula);
             return true;

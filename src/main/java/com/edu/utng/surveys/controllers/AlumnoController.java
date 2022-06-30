@@ -44,7 +44,7 @@ public class AlumnoController {
 
     @DeleteMapping(path = "/{matricula}")
     public String eliminarPorMatricula(@PathVariable("matricula") Long matricula){
-        boolean ok = this.alumnoService.eliminiarAlumno(matricula);
+        boolean ok = this.alumnoService.eliminarAlumno(matricula);
         if (ok) {
             return "Se elimino el usuario con matricula:" + matricula;
         } else{
