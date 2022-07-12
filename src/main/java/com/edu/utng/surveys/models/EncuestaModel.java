@@ -1,6 +1,13 @@
 package com.edu.utng.surveys.models;
 
-import javax.persistence.*;
+import java.sql.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name="encuesta")
@@ -9,29 +16,37 @@ public class EncuestaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
-    private Long numEncuesta;
+    private Long idEncuesta;
 
     @Column(nullable = false)
     private String nombre;
 
     @Column(nullable = false)
-    private String numPreguntas;
+    private int numPreguntas;
 
     @Column(nullable = false)
-    private String cuatrimestre;
+    private String pregunta;
 
     @Column(nullable = false)
-    private int profesorNumEmpleado;
+    private int cuatrimestre;
 
     @Column(nullable = false)
-    private int alumnoMatricula;
+    private Date fechaCreac;
+
+    public Date getFechaCreac() {
+        return fechaCreac;
+    }
+
+    public void setFechaCreac(Date fechaCreac) {
+        this.fechaCreac = fechaCreac;
+    }
 
     public Long getNumEncuesta() {
-        return numEncuesta;
+        return idEncuesta;
     }
 
     public void setNumEncuesta(Long numEncuesta) {
-        this.numEncuesta = numEncuesta;
+        this.idEncuesta = numEncuesta;
     }
 
     public String getNombre() {
@@ -42,35 +57,28 @@ public class EncuestaModel {
         this.nombre = nombre;
     }
 
-    public String getNumPreguntas() {
+    public int getNumPreguntas() {
         return numPreguntas;
     }
 
-    public void setNumPreguntas(String numPreguntas) {
+    public void setNumPreguntas(int numPreguntas) {
         this.numPreguntas = numPreguntas;
     }
 
-    public String getCuatrimestre() {
+    public int getCuatrimestre() {
         return cuatrimestre;
     }
 
-    public void setCuatrimestre(String cuatrimestre) {
+    public void setCuatrimestre(int cuatrimestre) {
         this.cuatrimestre = cuatrimestre;
     }
 
-    public int getProfesorNumEmpleado() {
-        return profesorNumEmpleado;
+    public String getPregunta() {
+        return pregunta;
     }
 
-    public void setProfesorNumEmpleado(int profesorNumEmpleado) {
-        this.profesorNumEmpleado = profesorNumEmpleado;
+    public void setPregunta(String pregunta) {
+        this.pregunta = pregunta;
     }
 
-    public int getAlumnoMatricula() {
-        return alumnoMatricula;
-    }
-
-    public void setAlumnoMatricula(int alumnoMatricula) {
-        this.alumnoMatricula = alumnoMatricula;
-    }
 }

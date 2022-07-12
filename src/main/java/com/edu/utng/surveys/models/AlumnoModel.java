@@ -1,5 +1,7 @@
 package com.edu.utng.surveys.models;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -29,7 +31,7 @@ public class AlumnoModel {
     private String apellidoMaterno;
 
     @Column(nullable = false)
-    private String fechaNacimiento;
+    private Date fechaNacimiento;
 
     @Column(nullable = false)
     private String sexo;
@@ -68,10 +70,10 @@ public class AlumnoModel {
     public void setApellidoMaterno(String apellidoMaterno) {
         this.apellidoMaterno = apellidoMaterno;
     }
-    public String getFechaNacimiento() {
+    public Date getFechaNacimiento() {
         return fechaNacimiento;
     }
-    public void setFechaNacimiento(String fechaNacimiento) {
+    public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
     public String getSexo() {

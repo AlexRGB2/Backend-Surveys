@@ -1,5 +1,7 @@
 package com.edu.utng.surveys.models;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,7 +30,7 @@ public class ProfesorModel {
     private String appMaterno;
 
     @Column(nullable=false)
-    private String fechaNac;
+    private Date fechaNac;
 
     @Column(nullable=false)
     private char sexo;
@@ -76,11 +78,11 @@ public class ProfesorModel {
         this.appMaterno = appMaterno;
     }
 
-    public String getFechaNac() {
+    public Date getFechaNac() {
         return fechaNac;
     }
 
-    public void setFechaNac(String fechaNac) {
+    public void setFechaNac(Date fechaNac) {
         this.fechaNac = fechaNac;
     }
 
@@ -99,4 +101,6 @@ public class ProfesorModel {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
+
+    
 }
