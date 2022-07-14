@@ -12,6 +12,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="profesor")
 public class ProfesorModel {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)

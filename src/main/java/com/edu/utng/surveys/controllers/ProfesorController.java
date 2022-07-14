@@ -29,12 +29,12 @@ public class ProfesorController {
     }
 
     @PostMapping
-    public ProfesorModel guardarAlumno(@RequestBody ProfesorModel profesor){
+    public ProfesorModel guardarProfesor(@RequestBody ProfesorModel profesor){
         return this.profesorService.guardarProfesor(profesor);
     }
 
     @GetMapping(path = "/{id}")
-    public Optional <ProfesorModel> obtenerAlumnoPorId(@PathVariable("id") Long id) {
+    public Optional <ProfesorModel> obtenerProfesorPorId(@PathVariable("id") Long id) {
         return this.profesorService.obtenerPorId(id);
     }
 
