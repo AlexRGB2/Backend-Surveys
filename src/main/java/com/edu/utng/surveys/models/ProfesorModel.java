@@ -1,17 +1,12 @@
 package com.edu.utng.surveys.models;
 
 import java.sql.Date;
-import java.util.HashSet;
-import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -43,10 +38,6 @@ public class ProfesorModel {
 
     @Column(nullable=true)
     private String direccion;
-
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "idEncuesta")
-    private Set<EncuestaModel> encuestas = new HashSet<>();
 
     public Long getId() {
         return id;
