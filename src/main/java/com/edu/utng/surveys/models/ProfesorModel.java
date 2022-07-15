@@ -103,5 +103,4 @@ public class ProfesorModel {
         this.direccion = direccion;
     }
 
-    
 }
